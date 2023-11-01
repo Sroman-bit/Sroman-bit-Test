@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import streamlit_gsheets import GSheetsConnection
+from streamlit_gsheets import GSheetsConnection
 
 st.title("Encuesta de Actualizacion de Datos ANEIAP Uninorte")
 st.markdown("Llena los espacios con tu información personal")
