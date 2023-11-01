@@ -48,6 +48,7 @@ with st.form(key = "data_base"):
               "TIENE CARNÉ": carne_o_no,
               "CARRERA": carrera_iap,
               "RH": tipo_sangre,
+              index = ["1", "2", "3", ...],
           }
       )
       data_frame_actualizado = pd.concat([existing_data,data_base], ignore_index = True)
