@@ -34,27 +34,22 @@ with st.form(key = "data_base"):
     
     submit_botton = st.form_submit_button(label = "Subir información")
     if submit_botton:
-        if not numero_dentificacion or not documento or not nombres or not apellidos or not nacimiento or not semestre_academico or not direccion_perteneciente or not telefono or not correo or not semestre_ingreso or not carne_o_no or not carrera_iap or not carrera_iap or not tipo_sangre:
-          st.warning("Todos los campos de esta encuesta deben ser llenados, revise por favor que asi sea el caso.")
-          st.stop
-        
-        else:
-          data_base = pd.DataFrame (
-              {
-                  "IDENTIFICACIÓN" : numero_dentificacion,
-                  "TIPO DE DOCUMENTO": documento,
-                  "NOMBRES": nombres,
-                  "APELLIDOS" : apellidos,
-                  "SEMESTRE": semestre,
-                  "DIRECCIÓN A LA QUE PERTENECE": direccion_perteneciente,
-                  "CELULAR": telefono,
-                  "CORREO COPORATIVO": correo,
-                  "SEMESTRE DE INGRESO A ANEIAP (20XX-X)": semestre_ingreso,
-                  "TIENE CARNÉ": carne_o_no,
-                  "CARRERA": carrera_iap,
-                  "RH": tipo_sangre,
-              }
-          )
-          data_frame_actualizado = pd.concat([existing_data,data_base], ignore_index = True)
-          conn.update(worksheet = "Hoja", data = data_frame_actualizado)
-          st.sucess("Se ha subido exitosamente su información a la base de datos capitular")
+      data_base = pd.DataFrame (
+          {
+              "IDENTIFICACIÓN" : numero_dentificacion,
+              "TIPO DE DOCUMENTO": documento,
+              "NOMBRES": nombres,
+              "APELLIDOS" : apellidos,
+              "SEMESTRE": semestre,
+              "DIRECCIÓN A LA QUE PERTENECE": direccion_perteneciente,
+              "CELULAR": telefono,
+              "CORREO COPORATIVO": correo,
+              "SEMESTRE DE INGRESO A ANEIAP (20XX-X)": semestre_ingreso,
+              "TIENE CARNÉ": carne_o_no,
+              "CARRERA": carrera_iap,
+              "RH": tipo_sangre,
+          }
+      )
+      data_frame_actualizado = pd.concat([existing_data,data_base], ignore_index = True)
+      conn.update(worksheet = "Hoja", data = data_frame_actualizado)
+      st.sucess("Se ha subido exitosamente su información a la base de datos capitular")
