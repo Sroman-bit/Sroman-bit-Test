@@ -7,7 +7,7 @@ st.title("Encuesta de Actualizacion de Datos ANEIAP Uninorte")
 st.markdown("Llena los espacios con tu información personal")
 
 conn = st.experimental_connection("gsheets", type = GSheetsConnection)
-existing_data = conn.read(worksheet = "Hoja", usecols = list(range(16)), ttl=5)
+existing_data = conn.read(worksheet = "Hoja", usecols = list(range(15)), ttl=5)
 existing_data = existing_data.dropna(how = "all")
 Direccion = ["ACADÉMICO","COMUNICACIONES","DESARROLLO","FINANZAS","MERCADEO"]
 Carne = ["SI","NO",]
@@ -52,4 +52,3 @@ with st.form(key = "data_base"):
       )
       data_frame_actualizado = pd.concat([existing_data,data_base], ignore_index = True)
       conn.update(worksheet = "Hoja", data = data_frame_actualizado)
-      st.sucess("Se ha subido exitosamente su información a la base de datos capitular")
