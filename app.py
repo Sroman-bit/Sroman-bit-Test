@@ -46,7 +46,7 @@ with st.form(key = "data_base"):
                   "TIPO DE DOCUMENTO": documento,
                   "NOMBRES": nombres,
                   "APELLIDOS" : apellidos,
-                  "FECHA DE NACIMIENTO": nacimiento.strtime("%Y-%m-%d"),
+                  "FECHA DE NACIMIENTO": nacimiento,
                   "SEMESTRE": semestre,
                   "DIRECCIÓN A LA QUE PERTENECE": direccion_perteneciente,
                   "CELULAR": telefono,
