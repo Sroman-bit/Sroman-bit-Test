@@ -13,7 +13,6 @@ Direccion = ["ACADÉMICO","COMUNICACIONES","DESARROLLO","FINANZAS","MERCADEO"]
 Carne = ["SI","NO",]
 Carrera = ["ING. INDUSTRIAL","ING. ADMINISTRATIVA","ING. PRODUCCIÓN"]
 RH = ["O-","O+","A−","A+","B−","B+","AB−","AB+"]
-Semestre = ["I","II","III","IV","V","VI","VII","VIII","IX","X"]
 Tipo_Documento = [ "C.C","T.I"]
 
 with st.form(key = "data_base"):
@@ -22,7 +21,7 @@ with st.form(key = "data_base"):
     nombres = st.text_input(label = "NOMBRES")
     apellidos = st.text_input(label = "APELLIDOS")
     nacimiento = st.date_input(label = "FECHA DE NACIMIENTO")
-    semestre_academico = st.multiselect("SEMESTRE", options = Semestre)
+    semestre_academico = st.date_input(label = "SEMESTRE")
     direccion_perteneciente = st.multiselect("DIRECCIÓN A LA QUE PERTENECE", options = Direccion)
     telefono = st.text_input(label = "CELULAR")
     correo = st.text_input(label = "CORREO CORPORATIVO")
