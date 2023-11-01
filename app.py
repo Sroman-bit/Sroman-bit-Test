@@ -47,7 +47,7 @@ with st.form(key = "data_base"):
                   "NOMBRES": nombres,
                   "APELLIDOS" : apellidos,
                   "FECHA DE NACIMIENTO": datetime.strptime(nacimiento, "%Y-%m-%d")
-                  "SEMESTRE": semestre,
+                  "SEMESTRE": semestre_academico,
                   "DIRECCIÓN A LA QUE PERTENECE": direccion_perteneciente,
                   "CELULAR": telefono,
                   "CORREO COPORATIVO": correo,
