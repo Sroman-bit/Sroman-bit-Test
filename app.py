@@ -29,35 +29,35 @@ with st.form(key = "data_base"):
     carne_o_no = st.multiselect("¿TIENE CARNÉ? ", options = Carne)
     carrera_iap = st.multiselect("CARRERA IAP", options = Carrera)
     tipo_sangre = st.multiselect("TIPO DE SANGRE ", options = RH)
-
-st.markdown("*Cada campo de esta encuesta es obligatorio de llenar, se agradece asociad@ por su colaboración.*")
-
-submit_botton = st.form_submit_button(label = "Subir información")
-if submit_botton:
-    if not numero_dentificacion or not documento or not nombres or not apellidos or not nacimiento or not semestre_academico or not direccion_perteneciente or not telefono or not correo or not semestre_ingreso or not carne_o_no or not carrera_iap or not carrera_iap or not tipo_sangre:
-      st.warning("Todos los campos de esta encuesta deben ser llenados, revise por favor que asi sea el caso.")
-      st.stop
-    elif existing_data["Nombre"].str.contains(nombres).any():
-      st.warning("Se tiene un registro previo bajo este nombre, en caso de esto ser un error, comuniquese con su DCC de confianza.")
-      st.stop
-    else:
-      data_base = pd.DataFrame (
-          {
-              "IDENTIFICACIÓN" : numero_dentificacion,
-              "TIPO DE DOCUMENTO": documento,
-              "NOMBRES": nombres,
-              "APELLIDOS" : appelidos,
-              "FECHA DE NACIMIENTO": nacimiento.strtime("%Y-%m-%d"),
-              "SEMESTRE": semestre,
-              "DIRECCIÓN A LA QUE PERTENECE": direccion_perteneciente,
-              "CELULAR": telefono,
-              "CORREO COPORATIVO": correo,
-              "SEMESTRE DE INGRESO A ANEIAP (20XX-X)": semestre_ingreso,
-              "TIENE CARNÉ": carne_o_no,
-              "CARRERA": carrera_iap,
-              "RH": tipo_sangre,
-          }
-      )
-      data_frame_actualizado = pd.concat([existing_data,data_base], ignore_index = True)
-      conn.update(worksheet = "Hoja", data = data_frame_actualizado)
-      st.sucess("Se ha subido exitosamente su información a la base de datos capitular")
+    
+    st.markdown("*Cada campo de esta encuesta es obligatorio de llenar, se agradece asociad@ por su colaboración.*")
+    
+    submit_botton = st.form_submit_button(label = "Subir información")
+    if submit_botton:
+        if not numero_dentificacion or not documento or not nombres or not apellidos or not nacimiento or not semestre_academico or not direccion_perteneciente or not telefono or not correo or not semestre_ingreso or not carne_o_no or not carrera_iap or not carrera_iap or not tipo_sangre:
+          st.warning("Todos los campos de esta encuesta deben ser llenados, revise por favor que asi sea el caso.")
+          st.stop
+        elif existing_data["Nombre"].str.contains(nombres).any():
+          st.warning("Se tiene un registro previo bajo este nombre, en caso de esto ser un error, comuniquese con su DCC de confianza.")
+          st.stop
+        else:
+          data_base = pd.DataFrame (
+              {
+                  "IDENTIFICACIÓN" : numero_dentificacion,
+                  "TIPO DE DOCUMENTO": documento,
+                  "NOMBRES": nombres,
+                  "APELLIDOS" : appelidos,
+                  "FECHA DE NACIMIENTO": nacimiento.strtime("%Y-%m-%d"),
+                  "SEMESTRE": semestre,
+                  "DIRECCIÓN A LA QUE PERTENECE": direccion_perteneciente,
+                  "CELULAR": telefono,
+                  "CORREO COPORATIVO": correo,
+                  "SEMESTRE DE INGRESO A ANEIAP (20XX-X)": semestre_ingreso,
+                  "TIENE CARNÉ": carne_o_no,
+                  "CARRERA": carrera_iap,
+                  "RH": tipo_sangre,
+              }
+          )
+          data_frame_actualizado = pd.concat([existing_data,data_base], ignore_index = True)
+          conn.update(worksheet = "Hoja", data = data_frame_actualizado)
+          st.sucess("Se ha subido exitosamente su información a la base de datos capitular")
