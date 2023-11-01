@@ -6,7 +6,7 @@ st.title("Encuesta de Actualizacion de Datos ANEIAP Uninorte")
 st.markdown("Llena los espacios con tu información personal")
 
 conn = st.experimental_connection("gsheets", type = GSheetsConnection)
-existing_data = conn.read(worksheet = "Hoja", usecols = list(range(16)), ttl=s)}
+existing_data = conn.read(worksheet = "Hoja", usecols = list(range(16)), ttl=s)
 existing_data = existing_data.dropna(how = "all")
 Direccion = ["ACADÉMICO","COMUNICACIONES","DESARROLLO","FINANZAS","MERCADEO"]
 Carne = ["SI","NO",]
