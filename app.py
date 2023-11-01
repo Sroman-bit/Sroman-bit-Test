@@ -32,7 +32,7 @@ with st.form(key = "data_base"):
 
 st.markdown("*Cada campo de esta encuesta es obligatorio de llenar, se agradece asociad@ por su colaboración.*")
 
-submit_botton = st.form_submit_button(label = "Subir información")
+submit_botton = st.button(label = "Subir información")
 if submit_botton:
     if not numero_dentificacion or not documento or not nombres or not apellidos or not nacimiento or not semestre_academico or not direccion_perteneciente or not telefono or not correo or not semestre_ingreso or not carne_o_no or not carrera_iap or not carrera_iap or not tipo_sangre:
       st.warning("Todos los campos de esta encuesta deben ser llenados, revise por favor que asi sea el caso.")
