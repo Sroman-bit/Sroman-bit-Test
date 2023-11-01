@@ -37,9 +37,7 @@ with st.form(key = "data_base"):
         if not numero_dentificacion or not documento or not nombres or not apellidos or not nacimiento or not semestre_academico or not direccion_perteneciente or not telefono or not correo or not semestre_ingreso or not carne_o_no or not carrera_iap or not carrera_iap or not tipo_sangre:
           st.warning("Todos los campos de esta encuesta deben ser llenados, revise por favor que asi sea el caso.")
           st.stop
-        elif existing_data["Nombre"].str.contains(nombres).any():
-          st.warning("Se tiene un registro previo bajo este nombre, en caso de esto ser un error, comuniquese con su DCC de confianza.")
-          st.stop
+        
         else:
           data_base = pd.DataFrame (
               {
