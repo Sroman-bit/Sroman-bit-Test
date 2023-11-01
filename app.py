@@ -20,7 +20,7 @@ with st.form(key = "data_base"):
     documento = st.multiselect("TIPO DE DOCUMENTO", options = Tipo_Documento)
     nombres = st.text_input(label = "NOMBRES")
     apellidos = st.text_input(label = "APELLIDOS")
-    nacimiento = st.sidebar.date_input(label = "FECHA DE NACIMIENTO")
+    nacimiento = st.date_input(label = "FECHA DE NACIMIENTO")
     semestre_academico = st.multiselect("SEMESTRE", options = Semestre)
     direccion_perteneciente = st.multiselect("DIRECCIÓN A LA QUE PERTENECE", options = Direccion)
     telefono = st.text_input(label = "CELULAR")
