@@ -24,7 +24,7 @@ with st.form(key = "data_base"):
     semestre_academico = st.multiselect("SEMESTRE", options = Semestre)
     direccion_perteneciente = st.multiselect("DIRECCIÓN A LA QUE PERTENECE", options = Direccion)
     telefono = st.text_input(label = "CELULAR")
-    correo = st.text_input(label = "CORREO COPORATIVO")
+    correo = st.text_input(label = "CORREO CORPORATIVO")
     semestre_ingreso = st.text_input(label = "SEMESTRE DE INGRESO A ANEIAP (20XX-X)")
     carne_o_no = st.multiselect("¿TIENE CARNÉ? ", options = Carne)
     carrera_iap = st.multiselect("CARRERA IAP", options = Carrera)
@@ -43,7 +43,7 @@ with st.form(key = "data_base"):
               "SEMESTRE": semestre_academico,
               "DIRECCIÓN A LA QUE PERTENECE": direccion_perteneciente,
               "CELULAR": telefono,
-              "CORREO COPORATIVO": correo,
+              "CORREO CORPORATIVO": correo,
               "SEMESTRE DE INGRESO A ANEIAP (20XX-X)": semestre_ingreso,
               "TIENE CARNÉ": carne_o_no,
               "CARRERA": carrera_iap,
