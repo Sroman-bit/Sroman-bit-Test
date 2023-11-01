@@ -40,7 +40,7 @@ with st.form(key = "data_base"):
               "TIPO DE DOCUMENTO": documento,
               "NOMBRES": nombres,
               "APELLIDOS" : apellidos,
-              "SEMESTRE": semestre,
+              "SEMESTRE": semestre_academico,
               "DIRECCIÓN A LA QUE PERTENECE": direccion_perteneciente,
               "CELULAR": telefono,
               "CORREO COPORATIVO": correo,
