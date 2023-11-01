@@ -18,17 +18,17 @@ Tipo_Documento = [ "C.C","T.I"]
 
 with st.form(key = "data_base"):
     numero_dentificacion = st.text_input(label = "IDENTIFICACIÓN")
-    documento = st.selectbox("TIPO DE DOCUMENTO", options = Tipo_Documento)
+    documento = st.multiselect("TIPO DE DOCUMENTO", options = Tipo_Documento)
     nombres = st.text_input(label = "NOMBRES")
     apellidos = st.text_input(label = "APELLIDOS")
-    semestre_academico = st.selectbox("SEMESTRE", options = Semestre)
-    direccion_perteneciente = st.selectbox("DIRECCIÓN A LA QUE PERTENECE", options = Direccion)
+    semestre_academico = st.multiselect("SEMESTRE", options = Semestre)
+    direccion_perteneciente = st.multiselect("DIRECCIÓN A LA QUE PERTENECE", options = Direccion)
     telefono = st.text_input(label = "CELULAR")
     correo = st.text_input(label = "CORREO CORPORATIVO")
     semestre_ingreso = st.text_input(label = "SEMESTRE DE INGRESO A ANEIAP (20XX-X)")
-    carne_o_no = st.selectbox("¿TIENE CARNÉ? ", options = Carne)
-    carrera_iap = st.selectbox("CARRERA IAP", options = Carrera)
-    tipo_sangre = st.selectbox("TIPO DE SANGRE ", options = RH)
+    carne_o_no = st.multiselect("¿TIENE CARNÉ? ", options = Carne)
+    carrera_iap = st.multiselect("CARRERA IAP", options = Carrera)
+    tipo_sangre = st.multiselect("TIPO DE SANGRE ", options = RH)
     
     st.markdown("*Cada campo de esta encuesta es obligatorio de llenar, se agradece asociad@ por su colaboración.*")
     
@@ -48,7 +48,6 @@ with st.form(key = "data_base"):
               "TIENE CARNÉ": carne_o_no,
               "CARRERA": carrera_iap,
               "RH": tipo_sangre,
-              index = ["1", "2", "3", ...],
           }
       )
       data_frame_actualizado = pd.concat([existing_data,data_base], ignore_index = True)
