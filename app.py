@@ -21,7 +21,6 @@ with st.form(key = "data_base"):
     documento = st.multiselect("TIPO DE DOCUMENTO", options = Tipo_Documento)
     nombres = st.text_input(label = "NOMBRES")
     apellidos = st.text_input(label = "APELLIDOS")
-    nacimiento = st.date_input(label = "FECHA DE NACIMIENTO")
     semestre_academico = st.multiselect("SEMESTRE", options = Semestre)
     direccion_perteneciente = st.multiselect("DIRECCIÓN A LA QUE PERTENECE", options = Direccion)
     telefono = st.text_input(label = "CELULAR")
@@ -46,7 +45,6 @@ with st.form(key = "data_base"):
                   "TIPO DE DOCUMENTO": documento,
                   "NOMBRES": nombres,
                   "APELLIDOS" : apellidos,
-                  "FECHA DE NACIMIENTO": nacimiento.strftime("%Y,%m,%d"),
                   "SEMESTRE": semestre,
                   "DIRECCIÓN A LA QUE PERTENECE": direccion_perteneciente,
                   "CELULAR": telefono,
