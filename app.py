@@ -21,7 +21,7 @@ with st.form(key = "data_base"):
     nombres = st.text_input(label = "NOMBRES")
     apellidos = st.text_input(label = "APELLIDOS")
     nacimiento = st.date_input(label = "FECHA DE NACIMIENTO")
-    semestre_academico = st.date_input(label = "SEMESTRE")
+    semestre_academico = st.text_input(label = "SEMESTRE")
     direccion_perteneciente = st.multiselect("DIRECCIÓN A LA QUE PERTENECE", options = Direccion)
     telefono = st.text_input(label = "CELULAR")
     correo = st.text_input(label = "CORREO CORPORATIVO")
